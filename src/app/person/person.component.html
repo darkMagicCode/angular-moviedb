@@ -1,0 +1,7 @@
+<div class="position-relative items ">
+    <div [routerLink]="['/person', item.id, item.media_type]" class=" curser item">
+          <img  class="w-100 rounded-3 border border-warning border-opacity-50" [src]="imgpath+item.profile_path" alt="movie">
+          <p class=" h6 my-2 "> {{item.name}}</p>
+          <p class="position-absolute bg-warning text-black rounded-pill px-2 m-1 end-0 top-0 fw-bolder placeholder-wave " style="z-index: 99;"> {{item.known_for_department}}</p>
+    </div>
+   </div>

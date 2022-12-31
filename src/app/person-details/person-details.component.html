@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-3">
+    <img
+      class="w-100 rounded-3 border"
+      [src]="imgpath + itemDetails.profile_path"
+      alt="movie"
+
+    />
+  </div>
+  <div class="col-md-9">
+    <h3 class="lead fs-1 my-3 p-2 border-start border-warning border-3">
+      {{ itemDetails.name }}
+    </h3>
+
+    <h3 class="lead my-4">
+      {{ itemDetails.biography?.split(".")?.slice(0, 3)?.join(" ") }}
+    </h3>
+
+    <h6 class="btn btn-warning noncurser my-3">
+      <i class="fas fa-star"></i> {{ itemDetails.known_for_department }}
+    </h6>
+    <p class="h6 my-4">
+      Place Of Birth :
+      <span class="btn btn-dark noncurser">{{
+        itemDetails.place_of_birth
+      }}</span>
+    </p>
+
+    <h6 class="my-4">
+      birth Data :
+      <span class="btn noncurser btn-dark p-2 "
+        >{{ itemDetails.birthday }}
+      </span>
+    </h6>
+
+    <p class="h6 my-3">
+      popularity :
+      <span class="btn noncurser btn-dark p-2"
+        >{{ itemDetails.popularity }}
+      </span>
+    </p>
+
+    <br />
+    <a
+      target="_blank"
+      [href]="itemDetails.homepage"
+      class="my-4 btn btn-danger"
+    >
+      Personal Site</a
+    >
+  </div>
+</div>

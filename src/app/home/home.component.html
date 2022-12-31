@@ -1,0 +1,106 @@
+<app-owl-cur [item]="trendingMovie"> </app-owl-cur>
+
+
+
+
+
+
+<div class="container" style="margin-top: 80px">
+  <div class="row g-3 border-bottom border-warning border-opacity-50 py-3">
+    <div class="col-md-4  d-flex align-items-center">
+      <h2 class="pt-1 pb-1">
+        <span class="placeholder-wave border-top border-3 border-warning pt-1"
+          >Trending
+        </span>
+        <br />
+        movie <br /><span class="h5">To Watch Right Now</span> <br /><span
+          class="placeholder-wave pb-2 h5 border-bottom border-3 border-warning"
+          >Trending Movie of the day</span
+        >
+      </h2>
+    </div>
+    <div class="col-md-2" *ngFor="let item of trendingMovie|pipSeeMore:seeeMore.movie">
+      <app-media-item [item]="item"></app-media-item>
+    </div>
+    <div class="row  gy-3 " >
+      <div class="col-12" >
+           <a class="btn btn-outline-success mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-plus  "  data-see-More="movie" (click)="seeMoreFun($event.target)">see more</a>
+           <a *ngIf="seeeMore.movie> 10" class="btn btn-outline-danger mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-subtract " data-see-More="movie" (click)="seeLessFun($event.target)">see less</a>
+         
+
+          </div>
+
+          <div class="col-12 text-end">  <a class=" btn btn-outline-danger mx-3  " data-prev-page="movie"  (click)="previous($event.target)">previous page</a>
+            <a class=" btn btn-outline-success   " data-next-page="movie" (click)="next($event.target)">next page</a>
+          </div>
+
+       </div>
+  </div>
+
+
+
+
+  <div class="row g-3 border-bottom border-warning border-opacity-50  py-3">
+    <div class="col-md-4 d-flex align-items-center">
+      <h2 class="pt-1 pb-1">
+        <span class="placeholder-wave border-top border-3 border-warning pt-1"
+          >Trending
+        </span>
+        <br />
+        tv <br /><span class="h5">To Watch Right Now</span> <br /><span
+          class="placeholder-wave pb-2 h4 border-bottom border-3 border-warning"
+          >Trending tv of the day</span
+        >
+      </h2>
+    </div>
+    <div class="col-md-2" *ngFor="let item of trndingTv|pipSeeMore:seeeMore.tv">
+      <app-media-item [item]="item"></app-media-item>
+    </div>
+    <div class="row  gy-3" >
+      <div class="col-12" >
+           <a class="btn btn-outline-success mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-plus  " data-see-More="tv" (click)="seeMoreFun($event.target)">see more</a>
+           <a *ngIf="seeeMore.tv > 10" class="btn btn-outline-danger mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-subtract"  data-see-More="tv" (click)="seeLessFun($event.target)">see less</a>
+           
+      </div>
+      <div class="col-12 text-end">  <a class=" btn btn-outline-danger mx-3" data-prev-page="tv" (click)="previous($event.target)">previous page</a>
+        <a class=" btn btn-outline-success   " data-next-page="tv" (click)="next($event.target)">next page</a>
+      </div>
+      
+       </div>
+
+  </div>
+
+
+
+  <div class="row g-3  py-3">
+    <div class="col-md-4 d-flex align-items-center">
+      <h2 class="pt-1 pb-1">
+        <span class="placeholder-wave border-top border-3 border-warning pt-1"
+          >Trending
+        </span>
+        <br />
+        people <br /><span class="h5">To Watch Right Now</span> <br /><span
+          class="placeholder-wave pb-2 h4 border-bottom border-3 border-warning"
+          >Trending peole of the day</span
+        >
+      </h2>
+    </div>
+    <div class="col-md-2" *ngFor="let item of trndingPeople|pipSeeMore:seeeMore.people">
+      <app-person [item]="item"></app-person>
+    </div>
+   <div class="row  gy-3" >
+  <div class="col-12" >
+       <a class="btn btn-outline-success mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-plus  " data-see-More="people"  (click)="seeMoreFun($event.target)">see more</a>
+       <a *ngIf="seeeMore.people > 10" class="btn btn-outline-danger mx-4 my-4 px-5 rounded-pill text-capitalize fs-4 fas fa-subtract " data-see-More="people"  (click)="seeLessFun($event.target)">see less</a>
+  </div>
+   </div>
+
+  </div>
+
+
+
+
+
+
+
+</div>

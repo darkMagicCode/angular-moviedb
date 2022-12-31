@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand">Navbar</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="isLogin" routerLink="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isLogin" routerLink="movies">movies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isLogin" routerLink="tv">tv</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          *ngIf="isLogin"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          setting Module
+        </a>
+        <ul class="dropdown-menu bg-dark">
+          <li>
+            <a
+              class="text-decoration-none ps-3 pe-5 text-light"
+              routerLink="setting/setting"
+              >Setting</a
+            >
+          </li>
+          <li><hr class="dropdown-divider bg-light" /></li>
+          <li>
+            <a
+              class="text-decoration-none text-light ps-3 pe-5"
+              routerLink="setting/privacy"
+              >Privacy</a
+            >
+          </li>
+          <li><hr class="dropdown-divider bg-light" /></li>
+          <li>
+            <a
+              class="text-decoration-none text-light ps-3 pe-5"
+              routerLink="setting/password"
+              >Password</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a
+          *ngIf="isLogin"
+          (click)="logout()"
+          class="nav-link btn btn-danger"
+          routerLink="login"
+          >sign out</a
+        >
+      </li>
+      <li class="nav-item">
+        <a *ngIf="!isLogin" class="nav-link" routerLink="signup">sign up</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="!isLogin" class="nav-link" routerLink="login">sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>

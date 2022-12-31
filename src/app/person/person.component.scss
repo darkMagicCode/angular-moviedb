@@ -1,0 +1,11 @@
+img{
+    height: 300px;
+}
+.items:hover .item{
+    scale: 1.1;
+    transition: all linear 0.5s ;
+    -webkit-transition: all linear 0.5s ;
+    -moz-transition: all linear 0.5s ;
+    -ms-transition: all linear 0.5s ;
+    -o-transition: all linear 0.5s ;
+}

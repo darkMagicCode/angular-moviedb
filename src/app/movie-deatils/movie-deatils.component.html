@@ -1,0 +1,71 @@
+<div className=" container">
+  <div className="row">
+    <div className="col-md-3">
+      <img
+        className="w-100 rounded-3 border"
+        src="imgpath + itemDetails.poster_path"
+        alt="movie"
+      />
+    </div>
+    <div className="col-md-9">
+      <h3 className=" border-start border-warning p-3 border-3">
+        {{ itemDetails.title }}{{ itemDetails.name }}
+      </h3>
+
+      <h3 className="h5">{{ itemDetails.tagline }}</h3>
+
+      <p className="lead">{{ itemDetails.overview }}</p>
+
+      <h6 className="btn btn-warning noncurser">
+        <i className="fas fa-star"></i> {{ itemDetails.vote_average.toFixed(1) }}
+        / 10
+      </h6>
+      <br />
+
+      <br />
+
+      <p className="lead mt-4 text-capitalize">type :</p>
+
+      <p className="noncurser me-1 btn btn-dark p-2">{{ itemDetails.name }}</p>
+
+      <h6>
+        <span className="btn noncurser btn-dark p-2"
+          >{{ itemDetails.status }} {{ itemDetails.release_date }}</span
+        >
+      </h6>
+
+      <p className="lead mt-4 text-capitalize">production companies :</p>
+
+      <p
+        className="noncurser me-1 btn btn-dark p-2"
+        ="let item of itemDetails.production_companies"
+      >
+     {{ itemDetails.name }}
+      </p>
+      <br />
+
+      <a
+        target="_blank"
+        href="itemDetails.homepage"
+        className="my-3 btn btn-danger"
+      >
+        Movie Site</a
+      >
+    </div>
+    <div className=" container">
+      <p className=" lead text-center fs-1 border-start border-end my-5">
+        similar category to watch
+      </p>
+    </div>
+
+    <div className="row">
+      <div className="col-md-2 curser ">
+        <img className="w-100" src="imgpath+item.poster_path" alt="" />
+        <h5>{{itemDetails.title}}</h5>
+      </div>
+    </div>
+  </div>
+  <div className=" text-center">
+    <a className="btn btn-outline-danger">see more</a>
+  </div>
+</div>

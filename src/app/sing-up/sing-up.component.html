@@ -1,0 +1,193 @@
+<section
+  class="pt-5 pb-5 mt-5 align-items-center d-flex bg-dark"
+  style="
+    min-height: 100vh;
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1920&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=c0d43804e2c7c93143fe8ff65398c8e9);
+  "
+>
+  <div class="container-fluid">
+    <div
+      class="row justify-content-center align-items-center d-flex-row text-center h-100"
+    >
+      <div class="col-md-6 h-50">
+        <div class="card shadow">
+          <div class="card-body mx-auto">
+            <h4 class="card-title mt-3 text-center">Create Account</h4>
+            <p class="text-center">Get started with your free account</p>
+            <p>
+              <a class="btn btn-block btn-info me-1">
+                <i class="fab fa-twitter mr-2"></i>Login via Twitter</a
+              >
+              <a class="btn btn-block btn-primary">
+                <i class="fab fa-facebook-f mr-2"></i>Login via facebook</a
+              >
+            </p>
+            <p class="text-muted font-weight-bold">
+              <span>OR</span>
+            </p>
+            <form
+              [formGroup]="registerForm"
+              (ngSubmit)="submitRegForm(registerForm)"
+            >
+              <div class="form-group input-group my-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text py-3">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input
+                  name="name"
+                  formControlName="name"
+                  class="form-control"
+                  placeholder=" name"
+                  type="text"
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  registerForm.get('name')?.errors &&
+                  registerForm.get('name')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p class="text-start text-capitalize">
+                  this pattern is requird
+
+                </p>
+              </div>
+
+              <div class="form-group input-group my-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text py-3">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input
+                  name="email"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="email"
+                  type="email"
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  registerForm.get('email')?.errors &&
+                  registerForm.get('email')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p class="text-start text-capitalize">
+                  this pattern is requird
+                </p>
+              </div>
+
+              <div class="form-group input-group my-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text py-3">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                <input
+                  name="number"
+                  formControlName="number"
+                  class="form-control"
+                  placeholder="number"
+                  type="number"
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  registerForm.get('number')?.errors &&
+                  registerForm.get('number')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p class="text-start text-capitalize">this number is requird</p>
+              </div>
+
+              <div class="form-group input-group my-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text py-3">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input
+                  name="password"
+                  formControlName="password"
+                  class="form-control"
+                  placeholder="password"
+                  type="password"
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  registerForm.get('password')?.errors &&
+                  registerForm.get('password')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p
+                  *ngIf="registerForm.get('age')?.getError('required')"
+                  class="text-start text-capitalize"
+                >
+                  this field is requird
+                </p>
+
+              </div>
+
+              <div class="form-group input-group my-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text py-3">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </div>
+                <input
+                  class="form-control"
+                  formControlName="password_repeat"
+                  placeholder="password_repeat"
+                  type="password"
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  registerForm.get('password_repeat')?.errors &&
+                  registerForm.get('password_repeat')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p class="text-start text-capitalize">
+                  pattern example: Simple12345
+                </p>
+              </div>
+
+              <div class="form-group mt-2">
+                <button
+                  [disabled]="registerForm.invalid"
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                >
+                  <p *ngIf="!loading">Create Account</p>
+                  <i *ngIf="loading" class="fas fa-spin fa-spinner"></i>
+                </button>
+              </div>
+              <p *ngIf="errorMes" class="alert alert-danger">
+                {{ errorMes }}
+              </p>
+              <p class="text-center">
+                Have an account?
+                <a>Log In</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

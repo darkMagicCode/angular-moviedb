@@ -1,0 +1,17 @@
+<div class=" bg-danger owl position-relative row align-content-end ">
+<div class="position-absolute layer"></div>
+      <div >
+          <owl-carousel-o [options]="customOptions" class="">
+          
+              <ng-container *ngFor="let movie of item">
+                <ng-template carouselSlide [id]="movie.id">
+                  <img class="w-100" [src]="imgpath+movie.poster_path" [alt]="movie.title" >
+                </ng-template>
+              </ng-container>
+            
+            </owl-carousel-o>
+      </div>
+          
+          
+
+</div>
